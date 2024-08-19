@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "hoyolab-check-in.fullname" . }}
+data:
+  CHECK_IN: |
+    {{- $check_in := .Values.config.check_in | toJson -}}
+    {{ $check_in | nindent 4 }}
+  ENABLED_DISCORD_WEBHOOK: {{ .Values.config.discord_webhook.enabled | quote }}

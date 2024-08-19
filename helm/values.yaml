@@ -1,0 +1,30 @@
+jobs:
+  hoyolab_check_in:
+    image:
+      repository: dqle/hoyolab-check-in
+      tag: latest
+      imagePullPolicy: IfNotPresent
+    schedule: "15 4 * * *"
+    failedJobsHistoryLimit: 3
+    successfulJobsHistoryLimit: 3
+  
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+#-----------------------------------------
+# App Configuration
+#-----------------------------------------
+config:
+  check_in:
+    genshin_impact: false
+    honkai_star_rail : false
+    honkai_impact_3rd: false
+    tears_of_themis: false
+    zenless_zone_zero: false
+  hoyolab_credential:
+    ltoken_v2: ""
+    ltuid_v2: ""
+  discord_webhook:
+    enabled: false 
+    webhook: ""

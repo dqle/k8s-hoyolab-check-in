@@ -1,0 +1,8 @@
+apiVersion: v2
+name: hoyolab-check-in
+appVersion: "1.0.0"
+version: 1.0.0
+description: A Helm chart for deploying a Hoyolab Check-In CronJob
+home: https://github.com/dqle/hoyolab-check-in-helm
+maintainers:
+- name: Duc Le
