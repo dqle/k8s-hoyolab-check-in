@@ -3,18 +3,19 @@ A Helm chart for deploying a Kubernetes cronjob that collects Hoyoverse games da
 
 ## Usage
 
-1. Obtain Hoyolab Cookies
+1. Obtain Hoyolab Credentials from Cookies:
+    - Open a Web Browser and log in to [HoYoLAB](https://www.hoyolab.com/)
+    - Go to your home page at: https://www.hoyolab.com/home
+    - Open the developer tools using `F12`.
+    - Click on the `Network` tab.
+    - Refresh the page.
+    - Search the filter for `get`
+    - Click on `get` File.
+    - Go to the "Cookies" tab.
+    - Copy the "ltoken_v2" cookie value.
+    - Copy the "ltuid_v2" cookie value.
 
-- Open a Web Browser and log in to [HoYoLAB](https://www.hoyolab.com/)
-- Go to your home page.
-- Open the developer tools using `F12`.
-- Click on the `Network` tab.
-- Refresh the page.
-- Search the filter for `get`
-- Click on `get`.
-- Go to the "Cookies" tab.
-- Copy the "ltoken_v2" cookie value.
-- Copy the "ltuid_v2" cookie value.
+    ![hoyolab_cookies](./repo_media/hoyolab_cookies.jpg)
 
 2. Create a `values.yaml` file containing the following:
 
