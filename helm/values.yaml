@@ -4,7 +4,8 @@ jobs:
       repository: dqle/hoyolab-check-in
       tag: latest
       imagePullPolicy: IfNotPresent
-    schedule: "15 4 * * *"
+    timeZone: "Asia/Shanghai"
+    schedule: "10 0 * * *"
     failedJobsHistoryLimit: 3
     successfulJobsHistoryLimit: 3
   

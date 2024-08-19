@@ -3,6 +3,7 @@ kind: CronJob
 metadata:
   name: {{ include "hoyolab-check-in.fullname" . }}
 spec:
+  timeZone: "{{ .Values.jobs.hoyolab_check_in.timeZone }}"
   schedule: "{{ .Values.jobs.hoyolab_check_in.schedule }}"
   jobTemplate:
     spec:
