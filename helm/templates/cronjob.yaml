@@ -1,0 +1,43 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "hoyolab-check-in.fullname" . }}
+spec:
+  timeZone: "{{ .Values.jobs.hoyolab_check_in.timeZone }}"
+  schedule: "{{ .Values.jobs.hoyolab_check_in.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hoyolab-checkin
+              image: "{{ .Values.jobs.hoyolab_check_in.image.repository }}:{{ .Values.jobs.hoyolab_check_in.image.tag }}"
+              imagePullPolicy: {{ .Values.jobs.hoyolab_check_in.image.imagePullPolicy }}
+              env:
+                - name: CHECK_IN
+                  valueFrom:
+                    configMapKeyRef:
+                      name: {{ include "hoyolab-check-in.fullname" . }}
+                      key: CHECK_IN
+                - name: LTOKEN_V2
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ include "hoyolab-check-in.fullname" . }}
+                      key: LTOKEN_V2
+                - name: LTUID_V2
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ include "hoyolab-check-in.fullname" . }}
+                      key: LTUID_V2
+                - name: ENABLED_DISCORD_WEBHOOK
+                  valueFrom:
+                    configMapKeyRef:
+                      name: {{ include "hoyolab-check-in.fullname" . }}
+                      key: ENABLED_DISCORD_WEBHOOK
+                - name: DISCORD_WEBHOOK
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ include "hoyolab-check-in.fullname" . }}
+                      key: DISCORD_WEBHOOK
+          restartPolicy: OnFailure
+      backoffLimit: 3
