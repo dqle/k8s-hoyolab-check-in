@@ -1,5 +1,7 @@
 # hoyolab-check-in-helm
-A Helm chart for deploying a Kubernetes cronjob that collects Hoyoverse games daily check in reward.
+A Helm chart for deploying a Kubernetes cronjob that collects Hoyoverse games daily check in reward. This cronjob will run at 12:10 AM UTC+8 by default (10 minutes after daily reward reset).
+
+![demo](./repo_media/demo.gif)
 
 ## Usage
 
@@ -40,14 +42,14 @@ config:
 | hoyolab_credential   | Obtained from Step 1                                                                                                                                              | No       | 
 | discord_webhook      | Enable Discord Webhook. See Discord documentation on webhook here: [Intro to Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)  | No       |
 
-2. Add helm chart:
+3. Add helm chart:
 
 ```
 helm repo add dqle https://dqle.io/helm-charts/
 helm repo update
 ```
 
-3. Install helm chart:
+4. Install helm chart:
 ```
 helm install hoyolab-check-in dqle/hoyolab-check-in -f values.yaml -n hoyolab-check-in --create-namespace
 ```
