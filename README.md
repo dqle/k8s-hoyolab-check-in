@@ -1,7 +1,7 @@
 # hoyolab-check-in-helm
 A Helm chart for deploying a Kubernetes cronjob that collects Hoyoverse games daily check in reward. This cronjob will run at 12:10 AM UTC+8 by default (10 minutes after daily reward reset).
 
-![demo](./repo_media/demo.gif)
+<img src="./repo_media/demo.gif" height="400"/>
 
 ## Usage
 
