@@ -2,7 +2,7 @@ jobs:
   hoyolab_check_in:
     image:
       repository: dqle/hoyolab-check-in
-      tag: latest
+      tag: 1.1.0
       imagePullPolicy: IfNotPresent
     timeZone: "Asia/Shanghai"
     schedule: "10 0 * * *"

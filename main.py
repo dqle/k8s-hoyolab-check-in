@@ -61,6 +61,7 @@ elif settings.CHECK_IN["honkai_impact_3rd"]:
 elif settings.CHECK_IN["tears_of_themis"]:
     check_in("tears_of_themis")
 elif settings.CHECK_IN["zenless_zone_zero"]:
+    HEADER["x-rpc-signgame"] = "zzz"
     check_in("zenless_zone_zero")
 else:
     logger.info("No game selected")

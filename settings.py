@@ -10,7 +10,7 @@ URL_CHECKIN_LIST = {
     "honkai_star_rail" : "https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=en-us&act_id=e202303301540311",
     "honkai_impact_3rd": "https://sg-public-api.hoyolab.com/event/mani/sign?lang=en-us&act_id=e202110291205111",
     "tears_of_themis"  : "https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=en-us&act_id=e202308141137581",
-    "zenless_zone_zero": "https://sg-act-nap-api.hoyolab.com/event/luna/zzz/os/sign?lang=en-us&act_id=e202406031448091"
+    "zenless_zone_zero": "https://sg-public-api.hoyolab.com/event/luna/zzz/os/sign?lang=en-us&act_id=e202406031448091"
 }
 
 #-----------------------------------------
